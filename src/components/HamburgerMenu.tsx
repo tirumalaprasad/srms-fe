@@ -29,7 +29,7 @@ const HamburgerMenu = () => {
             <Drawer
                 isOpen={isOpen}
                 onClose={() => setIsOpen(false)}
-                placement="right"
+                placement="left"
             >
                 <DrawerOverlay />
                 <DrawerContent>
@@ -47,8 +47,7 @@ const HamburgerMenu = () => {
                         />
                     </DrawerHeader>
                     <DrawerBody>
-
-                    <NavBar />
+                        <NavBar />
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>
