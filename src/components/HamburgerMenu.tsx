@@ -39,7 +39,6 @@ const HamburgerMenu = () => {
                         alignItems="center"
                         boxShadow="md"
                     >
-                        {/* <ColorModeSwitch /> */}
                         <IconButton
                             aria-label="Close Menu"
                             icon={<FiX />}

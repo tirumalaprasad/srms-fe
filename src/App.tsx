@@ -1,6 +1,7 @@
 import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import HamburgerMenu from "./components/HamburgerMenu";
+import Main from "./components/Main";
 
 function App() {
     return (
@@ -8,8 +9,9 @@ function App() {
             templateAreas={{
                 base: `"header" "main"`,
                 md: `"nav main" "nav main"`,
-                lg: `"nav main main" "nav main main"`,
+                lg: `"nav main" "nav main"`,
             }}
+            gridTemplateRows={"50px 1fr"}
             templateColumns={{
                 base: `1fr`,
                 md: `250px 1fr `,
@@ -23,6 +25,7 @@ function App() {
                     top="0"
                     boxShadow="md"
                     zIndex="sticky"
+                    bg="gray.100"
                 >
                     <HamburgerMenu />
                 </GridItem>
@@ -30,19 +33,20 @@ function App() {
 
             <Show above="md">
                 <Flex direction="column" flex="1" position="fixed">
-                    <GridItem
-                        area="nav"
-                        paddingX={5}
-                        paddingTop={5}
-                    >
+                    <GridItem area="nav" paddingX={5} paddingTop={5}>
                         <NavBar />
                     </GridItem>
                 </Flex>
             </Show>
 
             <GridItem area="main">
-                <Box paddingLeft={2} marginBottom={3} marginTop={3}>
-                    <p>Demo</p>
+                <Box
+                    paddingLeft={5}
+                    paddingRight={5}
+                    marginTop={5}
+                    marginBottom={5}
+                >
+                    <Main page="home" />
                 </Box>
             </GridItem>
         </Grid>

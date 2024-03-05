@@ -8,7 +8,16 @@ interface NavButtonProps extends ButtonProps {
 export const NavButton = (props: NavButtonProps) => {
     const { icon, label, ...buttonProps } = props;
     return (
-        <Button variant="tertiary" justifyContent="start" {...buttonProps}>
+        <Button
+            variant="ghost"
+            justifyContent="start"
+            _hover={{
+                bg: "#dddfe2",
+                transform: "scale(0.98)",
+                borderColor: "#bec3c9",
+            }}
+            {...buttonProps}
+        >
             <HStack spacing="3">
                 <Icon as={icon} boxSize="6" color="fg.subtle" />
                 <Text>{label}</Text>
