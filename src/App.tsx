@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import HamburgerMenu from "./components/HamburgerMenu";
 import Main from "./components/Main";
@@ -32,15 +32,14 @@ function App() {
             </Show>
 
             <Show above="md">
-                <Flex direction="column" flex="1" position="fixed">
-                    <GridItem area="nav" paddingX={5} paddingTop={5}>
-                        <NavBar />
-                    </GridItem>
-                </Flex>
+                <GridItem area="nav">
+                    <NavBar />
+                </GridItem>
             </Show>
 
             <GridItem area="main">
                 <Box
+                    height="100vh"
                     paddingLeft={5}
                     paddingRight={5}
                     marginTop={5}
