@@ -32,7 +32,10 @@ const ResultForm = () => {
                             <FormLabel>Course Name</FormLabel>
                             <Select placeholder="Select Course">
                                 {courses.map((course) => (
-                                    <option value={course.courseId}>
+                                    <option
+                                        value={course.courseId}
+                                        key={course.courseId}
+                                    >
                                         {course.courseName}
                                     </option>
                                 ))}
@@ -42,7 +45,10 @@ const ResultForm = () => {
                             <FormLabel>Student Name</FormLabel>
                             <Select placeholder="Select Student">
                                 {students.map((student) => (
-                                    <option value={student.studentId}>
+                                    <option
+                                        value={student.studentId}
+                                        key={student.studentId}
+                                    >
                                         {student.studentFullName}
                                     </option>
                                 ))}
@@ -52,7 +58,9 @@ const ResultForm = () => {
                             <FormLabel>Score</FormLabel>
                             <Select placeholder="Select Score">
                                 {scores.map((score) => (
-                                    <option value={score}>{score}</option>
+                                    <option value={score} key={score}>
+                                        {score}
+                                    </option>
                                 ))}
                             </Select>
                         </FormControl>

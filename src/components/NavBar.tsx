@@ -23,7 +23,7 @@ const NavBar = () => {
             <Stack justify="space-between" spacing="1" width="full">
                 <Stack spacing="3" shouldWrapChildren>
                     <Stack spacing="1">
-                        <NavButton label="Home" icon={FiHome} />
+                        <NavButton label="Home" icon={FiHome} navLink="/"/>
                     </Stack>
                     <Divider borderWidth={0.5} borderColor={"black"} />
                     <Stack justify="space-between" width="full">
@@ -40,10 +40,12 @@ const NavBar = () => {
                                     <NavButton
                                         label="Add New Student"
                                         icon={FiUserPlus}
+                                        navLink="/add-student"
                                     />
                                     <NavButton
                                         label="Students List"
                                         icon={FiUsers}
+                                        navLink="/list-student"
                                     />
                                 </Stack>
                             </Stack>
@@ -59,10 +61,12 @@ const NavBar = () => {
                                     <NavButton
                                         label="Add New Courses"
                                         icon={FiBook}
+                                        navLink="/add-course"
                                     />
                                     <NavButton
                                         label="Courses List"
                                         icon={FiBookOpen}
+                                        navLink="/list-course"
                                     />
                                 </Stack>
                             </Stack>
@@ -78,10 +82,12 @@ const NavBar = () => {
                                     <NavButton
                                         label="Add New Results"
                                         icon={FiAward}
+                                        navLink="/add-result"
                                     />
                                     <NavButton
                                         label="Results List"
                                         icon={FiBarChart}
+                                        navLink="/list-result"
                                     />
                                 </Stack>
                             </Stack>

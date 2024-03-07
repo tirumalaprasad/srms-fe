@@ -1,12 +1,13 @@
 import { As, Button, ButtonProps, HStack, Icon, Text } from "@chakra-ui/react";
-
+import { Link } from "react-router-dom";
 interface NavButtonProps extends ButtonProps {
     icon: As;
     label: string;
+    navLink: string
 }
 
 export const NavButton = (props: NavButtonProps) => {
-    const { icon, label, ...buttonProps } = props;
+    const { icon, label, navLink, ...buttonProps } = props;
     return (
         <Button
             variant="ghost"
@@ -17,6 +18,8 @@ export const NavButton = (props: NavButtonProps) => {
                 borderColor: "#bec3c9",
             }}
             {...buttonProps}
+            as={Link}
+            to={navLink}
         >
             <HStack spacing="3">
                 <Icon as={icon} boxSize="6" color="fg.subtle" />
