@@ -1,8 +1,6 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-export interface FetchResponse<T> {
-    results: T[];
-}
+export interface FetchResponse<T> extends Array<T> { }
 
 const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
