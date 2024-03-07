@@ -10,12 +10,25 @@ export interface Result {
     score: string;
 }
 
-const apiClient = new APIClient<Result>("/result");
+const resApiClient = new APIClient<Result>("/result");
 
-export const useResults = () =>
+export const getResults = () =>
     useQuery({
         queryKey: ["results"],
-        queryFn: apiClient.getAll,
+        queryFn: resApiClient.getAll,
     });
 
-export default useResults;
+export const createResult = async (data: any) =>
+        await resApiClient.createNew({}, data);
+
+export default getResults;
+
+
+const evalApiClient = new APIClient<Result>("/result/toeval");
+
+export const getEvalObjects = () =>
+    useQuery({
+        queryKey: ["getEvalObjects"],
+        queryFn: evalApiClient.getAll,
+    });
+

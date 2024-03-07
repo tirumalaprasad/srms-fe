@@ -11,10 +11,10 @@ import {
     Divider,
     Spinner,
 } from "@chakra-ui/react";
-import { Result, useResults } from "../hooks/useResults";
+import { Result, getResults } from "../hooks/useResults";
 
 const ResultTable = (props: TableProps) => {
-    const { data, isLoading, error } = useResults();
+    const { data, isLoading, error } = getResults();
 
     if (error) return null;
     if (isLoading) return <Spinner />;
