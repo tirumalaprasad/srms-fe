@@ -5,8 +5,8 @@ export interface FetchResponse<T> {
 }
 
 const axiosInstance = axios.create({
-    baseURL: process.env.BASE_URL,
-    headers: { 'Authorization': process.env.API_TOKEN }
+    baseURL: import.meta.env.VITE_BASE_URL,
+    headers: { 'Authorization': import.meta.env.VITE_API_TOKEN }
 })
 
 class APIClient<T>{

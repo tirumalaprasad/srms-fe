@@ -9,11 +9,11 @@ import ResultTable from "./ResultTable";
 import StudentTable from "./StudentTable";
 import StudentForm from "./StudentForm";
 
-const Main = (prop:any) => {
+const Main = () => {
     return (
         <Flex h="full" maxW="container.sm">
             <Box flex="1">
-                <StudentForm />
+                <StudentTable />
             </Box>
         </Flex>
     );

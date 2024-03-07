@@ -14,7 +14,7 @@ const NavBar = () => {
     return (
         <Box
             w="full"
-            h="100vh"
+            h="full"
             bg={"#f9f9fb"}
             paddingX={5}
             paddingTop={5}
