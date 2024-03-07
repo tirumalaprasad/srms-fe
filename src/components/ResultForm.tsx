@@ -18,7 +18,7 @@ const ResultForm = () => {
             </Heading>
             <Divider paddingBottom={4} />
 
-            <Box as="form">
+            <Box >
                 <Stack
                     spacing="5"
                     px={{ base: "4", md: "6" }}
