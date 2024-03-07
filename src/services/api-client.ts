@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 
 export interface FetchResponse<T> extends Array<T> {
     created: string;
+    message: string;
 }
 
 const axiosInstance = axios.create({
