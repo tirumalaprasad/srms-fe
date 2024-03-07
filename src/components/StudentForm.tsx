@@ -36,7 +36,12 @@ const StudentForm = () => {
             setIsEmpty(false);
             let res = await createStudent(formData);
             alert(res?.message);
-            window.location.reload();
+            setFormData({
+                firstName: "",
+                familyName: "",
+                dob: "",
+                email: "",
+            });
         } catch (error) {
             alert(`Error creating course: ${error}`);
         }

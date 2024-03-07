@@ -26,7 +26,7 @@ const CourseForm = () => {
             setIsEmpty(false);
             let res = await postCourse({ courseName: ref?.current?.value });
             alert(res?.message);
-            window.location.reload();
+            ref.current.value = "";
         } catch (error) {
             alert(`Error creating course: ${error}`);
         }

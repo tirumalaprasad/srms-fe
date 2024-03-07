@@ -35,7 +35,11 @@ const ResultForm = () => {
             setIsEmpty(false);
             let res = await createResult(formData);
             alert(res?.message);
-            window.location.reload();
+            setFormData({
+                courseId: 0,
+                studentId: 0,
+                score: "",
+            });
         } catch (error) {
             alert(`Error reporting result: ${error}`);
         }
