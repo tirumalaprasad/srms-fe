@@ -19,5 +19,3 @@ export const postCourse = async (data: any) =>
 
 export const deleteCourse = async (data: any) =>
     await apiClient.delete({}, data);
-
-export default { getCourses, postCourse };

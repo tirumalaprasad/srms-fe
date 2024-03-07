@@ -13,13 +13,23 @@ import {
     Tr,
 } from "@chakra-ui/react";
 import { FiTrash2 } from "react-icons/fi";
-import { Student, useStudents } from "../hooks/useStudents";
+import { Student, getStudents, deleteStudent } from "../hooks/useStudents";
 
 const StudentTable = () => {
-    const { data, isLoading, error } = useStudents();
+    const { data, isLoading, error, refetch } = getStudents();
 
     if (error) return null;
     if (isLoading) return <Spinner />;
+
+    const handleDeleteCourse = async (studentId: number) => {
+        try {
+            await deleteStudent({ studentId: studentId });
+            refetch();
+        } catch (error) {
+            console.error("Error deleting student:", error);
+        }
+    };
+
     return (
         <>
             <Heading as="h3" size="lg">
@@ -59,6 +69,11 @@ const StudentTable = () => {
                                         icon={<FiTrash2 />}
                                         variant="tertiary"
                                         aria-label="Delete member"
+                                        onClick={() =>
+                                            handleDeleteCourse(
+                                                student.studentId
+                                            )
+                                        }
                                     />
                                 </HStack>
                             </Td>

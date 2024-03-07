@@ -10,10 +10,14 @@ export interface Student {
 
 const apiClient = new APIClient<Student>("/student");
 
-export const useStudents = () =>
+export const getStudents = () =>
     useQuery({
         queryKey: ["students"],
         queryFn: apiClient.getAll,
     });
 
-export default useStudents;
+export const createStudent = async (data: any) =>
+    await apiClient.createNew({}, data);
+
+export const deleteStudent = async (data: any) =>
+    await apiClient.delete({}, data);

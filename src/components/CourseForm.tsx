@@ -25,14 +25,10 @@ const CourseForm = () => {
         try {
             setIsEmpty(false);
             let res = await postCourse({ courseName: ref?.current?.value });
-            if (res.created) {
-                alert("Course posted successfully!");
-            } else {
-                alert("Course already exists!");
-            }
+            alert(res?.message);
             window.location.reload();
         } catch (error) {
-            alert(`Error posting course: ${error}`);
+            alert(`Error creating course: ${error}`);
         }
     };
 
